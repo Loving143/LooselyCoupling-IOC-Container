@@ -8,7 +8,7 @@ import com.example.Service.PaymentMethod;
 public class PayPal implements PaymentMethod{
 
 	@Override
-	public void pay() {
-		System.out.println("This payment will be done using Paypal");
+	public String pay() {
+		return "Payment done using Paypal";
 	}
 }

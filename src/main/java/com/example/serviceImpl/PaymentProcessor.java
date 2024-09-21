@@ -1,19 +1,21 @@
 package com.example.serviceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.Service.PaymentMethod;
 @Service
 public class PaymentProcessor {
 	
-	private PaymentMethod paymentMethod;
+	@Autowired
+    @Qualifier("creditcardpayment")
 
-    public PaymentProcessor(PaymentMethod paymentMethod) { // Constructor injection
-        this.paymentMethod = paymentMethod;
-    }
+	public PaymentMethod paymentMethod;
 
-    public void processPayment() {
-        paymentMethod.pay();
+
+    public String processPayment() {
+      return   paymentMethod.pay();
     }
 
 
