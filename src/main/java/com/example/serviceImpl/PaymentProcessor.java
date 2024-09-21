@@ -8,12 +8,14 @@ import com.example.Service.PaymentMethod;
 @Service
 public class PaymentProcessor {
 	
-	@Autowired
-    @Qualifier("creditcardpayment")
+//	@Autowired
+//    @Qualifier("creditcardpayment")
 
 	public PaymentMethod paymentMethod;
 
-
+	public PaymentProcessor() {
+	 this.paymentMethod = new CreditCardPayment();
+	}
     public String processPayment() {
       return   paymentMethod.pay();
     }
